@@ -1,19 +1,10 @@
 
-Para executar o programa podemos fazer isso de duas formas: modo local e remoto.
+Para executar o programa primeiro é necessário ter instalado opcua.
 
-- Para o modo remoto:
+A ordem de execução é:
 
-A váriavel booleana na linha 14 do arquivo main.py deve estar definida 
-como TRUE, dessa forma: remote_mode = bool(True).
-
-Após isso, primeiramente, deve-se executar o arquivo synoptic.py da forma 
-a seguir: "python synoptic.py" e, em um segundo terminal, o outro
-arquivo main.py: "python main.py" 
-
-
-- Para o modo local:
-
-A váriavel booleana na linha 14 do arquivo main.py deve 
-estar definida como FALSE, dessa forma: remote_mode = bool(False).
-
-Após isso, deve-se executar o arquivo dessa forma: "python main.py". 
+1. python3 clp.py no terminal 1
+2. python3 client_tcp.py no terminal 2
+3. Escolher algum número de referência no terminal 
+4. python3 main.py
+5. Digitar algum número de referência no terminal do clp.py
