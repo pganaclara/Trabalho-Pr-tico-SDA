@@ -5,6 +5,8 @@ import threading
 message = ""
 
 # Função executada em uma thread para plotar os dados do gráfico
+
+
 def client_tcp():
 
     global message

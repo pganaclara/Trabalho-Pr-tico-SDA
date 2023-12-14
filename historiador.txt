@@ -1,0 +1,78 @@
+
+Time stamp: 1702511022.657439 Date time: 2023-12-13 20:43:42.657439
+ 
+Motor 1 | Velocidade: 0.9995206939695394
+Motor 2 | Velocidade: 0
+Motor 3 | Velocidade: 0.9995206939695394
+Motor 4 | Velocidade: 0
+Motor 5 | Velocidade: 0.9995206939695394
+Motor 6 | Velocidade: 0
+Motor 7 | Velocidade: 0
+Motor 8 | Velocidade: 0
+Motor 9 | Velocidade: 0.9995206939695394
+Motor 10 | Velocidade: 0
+
+Time stamp: 1702511351.129176 Date time: 2023-12-13 20:49:11.129176
+ 
+Motor 1 | Velocidade: 1.996945097371894
+Motor 2 | Velocidade: 0
+Motor 3 | Velocidade: 1.996945097371894
+Motor 4 | Velocidade: 0
+Motor 5 | Velocidade: 1.996945097371894
+Motor 6 | Velocidade: 0
+Motor 7 | Velocidade: 1.996945097371894
+Motor 8 | Velocidade: 0
+Motor 9 | Velocidade: 0
+Motor 10 | Velocidade: 0
+
+Time stamp: 1702511642.398862 Date time: 2023-12-13 20:54:02.398862
+ 
+Motor 1 | Velocidade: 1.9960895491067252
+Motor 2 | Velocidade: 0
+Motor 3 | Velocidade: 1.9960895491067252
+Motor 4 | Velocidade: 0
+Motor 5 | Velocidade: 1.9960895491067252
+Motor 6 | Velocidade: 0
+Motor 7 | Velocidade: 1.9960895491067252
+Motor 8 | Velocidade: 0
+Motor 9 | Velocidade: 0
+Motor 10 | Velocidade: 0
+
+Time stamp: 1702511806.40988 Date time: 2023-12-13 20:56:46.409880
+ 
+Motor 1 | Velocidade: 1.9985435050638967
+Motor 2 | Velocidade: 0
+Motor 3 | Velocidade: 0
+Motor 4 | Velocidade: 1.9985435050638967
+Motor 5 | Velocidade: 0
+Motor 6 | Velocidade: 0
+Motor 7 | Velocidade: 0
+Motor 8 | Velocidade: 1.9985435050638967
+Motor 9 | Velocidade: 0
+Motor 10 | Velocidade: 1.9985435050638967
+
+Time stamp: 1702512874.637745 Date time: 2023-12-13 21:14:34.637745
+ 
+Motor 1 | Velocidade: 0
+Motor 2 | Velocidade: 0
+Motor 3 | Velocidade: 1.9993055826135413
+Motor 4 | Velocidade: 0
+Motor 5 | Velocidade: 1.9993055826135413
+Motor 6 | Velocidade: 0
+Motor 7 | Velocidade: 1.9993055826135413
+Motor 8 | Velocidade: 0
+Motor 9 | Velocidade: 1.9993055826135413
+Motor 10 | Velocidade: 0
+
+Time stamp: 1702512948.570827 Date time: 2023-12-13 21:15:48.570827
+ 
+Motor 1 | Velocidade: 0
+Motor 2 | Velocidade: 0
+Motor 3 | Velocidade: 1.9993055826135413
+Motor 4 | Velocidade: 0
+Motor 5 | Velocidade: 1.9993055826135413
+Motor 6 | Velocidade: 0
+Motor 7 | Velocidade: 1.9993055826135413
+Motor 8 | Velocidade: 0
+Motor 9 | Velocidade: 1.9993055826135413
+Motor 10 | Velocidade: 0

@@ -39,22 +39,17 @@ if remote_mode:
 def interface_thread():
     global speed_reference
 
-    if remote_mode:
-        a = client.recv(8024)
-        if a != "-":
-            speed_reference = int(a)
+    response = client.recv(8024)
+
+    if response.decode('utf-8') == 'kill':
+        # Encerra a conexão com o servidor
+        client.close()
+        client.conectar()
     else:
-        speed_reference = input("\nQual velocidade de referência: ")
-        speed_reference = int(speed_reference)
+        speed_reference = int(response)
 
     wait_ref.set()
     wait_ref.clear()
-
-
-def recebeVelocidade(sc):
-    global speed
-    return speed
-
 
 # Thread logger
 
@@ -82,7 +77,7 @@ def logger_thread():
                 msg += "Motor " + str(i+1) + " | Velocidade: 0" + "\n"
 
         file.write(str(msg))
-        time.sleep(5)
+        time.sleep(1)
 
 
 # Thread dos motores
@@ -107,13 +102,10 @@ def motor_thread(id):
 
         while (t < start_time + 10):
             t = time.time()
-            print(t, speed, id)
             motor_timer.wait()
             torque = (T*(km*voltage - km*kb*speed - ra*torque))/la + torque
             speed = (T*(torque - b*speed))/jm + speed
             print("Motor de índice ", id+1, " com velocidade de: ", speed)
-            msgMotor = "Motor de índice ", id+1, " com velocidade de: ", speed
-            client.enviar(str(msgMotor))
 
         id_motores.remove(id)
         sem_obj.release()
