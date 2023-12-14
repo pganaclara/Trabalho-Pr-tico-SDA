@@ -36,7 +36,7 @@ def client_tcp():
             client_socket.close()
             break
         else:
-            print("Nível do tanque: " + response)
+            print("Velocidade do motor: " + response)
 
 
 def main():
