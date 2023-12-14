@@ -34,8 +34,6 @@ if remote_mode:
     client.conectar()
 
 # Thread  interface
-
-
 def interface_thread():
     global speed_reference
 
@@ -52,8 +50,6 @@ def interface_thread():
     wait_ref.clear()
 
 # Thread logger
-
-
 def logger_thread():
     global msg
 
@@ -80,6 +76,29 @@ def logger_thread():
         time.sleep(1)
 
 
+# Função Runge-Kutta para integração numérica
+def runge_kutta(f, h, y, t):
+    k1 = h * f(y, t)
+    k2 = h * f(y + 0.5 * k1, t + 0.5 * h)
+    k3 = h * f(y + 0.5 * k2, t + 0.5 * h)
+    k4 = h * f(y + k3, t + h)
+    return y + (k1 + 2 * k2 + 2 * k3 + k4) / 6.0
+
+# Função de dinâmica do motor
+def motor_dynamics(y, t):
+    global speed, torque
+    dydt = [0, 0]
+
+    dydt[0] = (T * (km * voltage - km * kb * y[0] - ra * y[1])) / la
+    dydt[1] = (T * (y[1] - b * y[0])) / jm
+
+    # Atualiza a velocidade e torque do motor usando Runge-Kutta
+    motor_state = [speed, torque]
+    motor_state = runge_kutta(lambda v, _: dydt[0], 0.1, motor_state, t)
+    speed, torque = motor_state[0], motor_state[1]
+
+    return dydt
+
 # Thread dos motores
 def motor_thread(id):
     global speed, torque
@@ -90,7 +109,7 @@ def motor_thread(id):
     verify_sequence.acquire()
 
     # Verificar se existe motor em sequência ativo
-    if id+1 in id_motores or id-1 in id_motores or id in id_motores:
+    if id + 1 in id_motores or id - 1 in id_motores or id in id_motores:
         sem_obj.release()
         verify_sequence.release()
 
@@ -100,12 +119,16 @@ def motor_thread(id):
         start_time = time.time()
         t = start_time
 
-        while (t < start_time + 10):
+        while t < start_time + 10:
             t = time.time()
             motor_timer.wait()
-            torque = (T*(km*voltage - km*kb*speed - ra*torque))/la + torque
-            speed = (T*(torque - b*speed))/jm + speed
-            print("Motor de índice ", id+1, " com velocidade de: ", speed)
+
+            # Atualiza a dinâmica do motor usando Runge-Kutta
+            motor_state = [speed, torque]
+            motor_state = runge_kutta(motor_dynamics, 0.1, motor_state, t)
+            speed, torque = motor_state[0], motor_state[1]
+
+            print("Motor de índice", id + 1, "com velocidade de:", speed)
 
         id_motores.remove(id)
         sem_obj.release()
