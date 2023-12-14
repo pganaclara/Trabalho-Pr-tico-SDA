@@ -89,7 +89,7 @@ def main():
 
         # Envia a resposta de volta para o cliente
         client_socket.send(response.encode('utf-8'))
-        print("Nível enviado: " + response + "\n")
+        print("Velocidade enviada: " + response + "\n")
 
     # Encerra a conexão com o cliente
     client_socket.close()
